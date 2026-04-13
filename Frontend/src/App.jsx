@@ -17,6 +17,7 @@ import Register from './pages/Register';
 import Wishlist from './pages/Wishlist';
 import Profile from './pages/Profile';
 import Orders from './pages/Orders';
+import Admin from './pages/Admin';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
           <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} />
+          <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

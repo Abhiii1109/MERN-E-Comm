@@ -30,6 +30,7 @@ const registerUser = async (req, res) => {
           _id: user._id,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
           cart: user.cart,
         },
         token: generateToken(user._id)
@@ -54,6 +55,7 @@ const loginUser = async (req, res) => {
           _id: user._id,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
           cart: user.cart,
         },
         token: generateToken(user._id)
@@ -90,6 +92,7 @@ const updateProfile = async (req, res) => {
           _id: updatedUser._id,
           name: updatedUser.name,
           email: updatedUser.email,
+          isAdmin: updatedUser.isAdmin,
           cart: updatedUser.cart,
         },
         token: generateToken(updatedUser._id)

@@ -141,6 +141,11 @@ export default function Navbar() {
                       </div>
                       <Link to="/profile" className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"><User size={16} /> My Profile</Link>
                       <Link to="/orders" className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"><Package size={16} /> My Orders</Link>
+                      {user?.isAdmin && (
+                        <Link to="/admin" className="flex items-center gap-3 px-4 py-3 text-sm font-bold text-red-600 hover:bg-red-50 transition-colors border-t border-zinc-100">
+                           <Package size={16} /> Admin Panel
+                        </Link>
+                      )}
                       <button onClick={() => { logout(); setUserMenuOpen(false); navigate('/'); }} className="w-full flex items-center gap-3 px-4 py-3 text-sm text-red-500 hover:bg-red-50 transition-colors border-t border-zinc-100"><LogOut size={16} /> Sign Out</button>
                     </div>
                   )}
@@ -183,6 +188,9 @@ export default function Navbar() {
                 <>
                   <Link to="/profile" onClick={() => setMenuOpen(false)} className="py-3 text-zinc-600 font-medium">My Profile</Link>
                   <Link to="/orders" onClick={() => setMenuOpen(false)} className="py-3 text-zinc-600 font-medium">My Orders</Link>
+                  {user?.isAdmin && (
+                    <Link to="/admin" onClick={() => setMenuOpen(false)} className="py-3 text-red-600 font-bold">Admin Panel</Link>
+                  )}
                   <button onClick={() => { logout(); setMenuOpen(false); }} className="py-3 text-red-500 font-medium text-left">Sign Out</button>
                 </>
               )}
